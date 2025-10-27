@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<!-- <Target Name="RunLBeforeBuildStepgen" BeforeTargets="LibraryManagerRestore" > -->
+	<Target Name="RunLBeforeBuildStepgen" BeforeTargets="BeforeBuild" >
+		<Message Text="=== Generating localizations ===" Importance="high" />
+         <WriteLinesToFile File="Localizations.js" Lines="Localization data generated before build." />
+	</Target>
+
+	<Target Name="RemoveLocal" BeforeTargets="Clean" >
+		<Message Text="=== Remove localizations ===" Importance="high" />
+		<Delete Files="Localizations.js" />
+	</Target>
+
+</Project>

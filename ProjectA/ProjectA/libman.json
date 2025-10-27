@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "defaultProvider": "filesystem",
+  "libraries": [
+    {
+      "library": "../../ProjectB/",
+        "files": [ "Localizations.js" ],
+      "destination": "wwwroot/assets/l10n/"
+    }
+  ]
+}
